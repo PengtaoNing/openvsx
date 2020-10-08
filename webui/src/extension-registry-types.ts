@@ -143,6 +143,7 @@ export function isEqualUser(u1: UserData, u2: UserData): boolean {
 
 export interface PersonalAccessToken {
     id: number;
+    active?: boolean;
     value?: string;
     createdTimestamp: string;
     accessedTimestamp?: string;
@@ -188,6 +189,12 @@ export interface Namespace {
     access: 'public' | 'restricted';
     membersUrl: UrlString;
     roleUrl: UrlString;
+}
+
+export interface PublisherInfo {
+    user: UserData;
+    extensions: Extension[];
+    accessTokens: PersonalAccessToken[];
 }
 
 export type MembershipRole = 'contributor' | 'owner';

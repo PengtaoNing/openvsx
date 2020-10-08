@@ -59,6 +59,7 @@ public class PersonalAccessToken {
     public AccessTokenJson toAccessTokenJson() {
         var json = new AccessTokenJson();
         json.id = this.getId();
+        json.active = this.isActive();
         // The value is not included: it is displayed only when the token is created
         if (this.getCreatedTimestamp() != null)
             json.createdTimestamp = TimeUtil.toUTCString(this.getCreatedTimestamp());

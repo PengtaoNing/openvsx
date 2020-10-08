@@ -97,10 +97,12 @@ public class UserAPITest {
                     var t1 = new AccessTokenJson();
                     t1.description = "This is token 1";
                     t1.createdTimestamp = "2000-01-01T10:00Z";
+                    t1.active = true;
                     a.add(t1);
                     var t3 = new AccessTokenJson();
                     t3.description = "This is token 3";
                     t3.createdTimestamp = "2000-01-01T10:00Z";
+                    t3.active = true;
                     a.add(t3);
                 })));
     }
@@ -114,6 +116,7 @@ public class UserAPITest {
                 .andExpect(content().json(accessTokenJson(t -> {
                     t.value = "foobar";
                     t.description = "This is my token";
+                    t.active = true;
                 })));
     }
 

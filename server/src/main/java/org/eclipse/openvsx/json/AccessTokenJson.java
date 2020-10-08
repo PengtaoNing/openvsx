@@ -28,6 +28,8 @@ public class AccessTokenJson extends ResultJson {
     @Nullable
     public String value;
 
+    public boolean active;
+
     public String createdTimestamp;
 
     @Nullable
